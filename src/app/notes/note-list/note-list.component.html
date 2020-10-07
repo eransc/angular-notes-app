@@ -1,0 +1,13 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" >
+    <app-post-note></app-post-note>
+  </div>
+  <div
+    fxFlex="25%"
+    fxFlex.xs="100%"
+    fxFlex.sm="50%" 
+    *ngFor="let note of notesService.notes | async; trackBy: identity"
+  >
+    <app-note-card [note]="note"></app-note-card>
+  </div>
+</div>

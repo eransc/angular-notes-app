@@ -1,0 +1,31 @@
+<mat-card class="mat-elevation-z4 board-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title class="board-card-title">
+        {{ note.author }}
+      </mat-card-title>
+    </mat-card-title-group>
+
+    <div fxFlex></div>
+
+    <div fxLayoutAlign="center center">
+      <button mat-icon-button (click)="openNoteDialog()">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteNote(note.id)">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+
+  <hr />
+  <mat-card-content style="margin-top: 16px">
+    <h3>{{ note.date | date }}</h3>
+    <div class="text ellipsis">
+      <span class="text-concat">
+        {{ note.content }}
+      </span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>

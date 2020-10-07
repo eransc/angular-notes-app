@@ -1,0 +1,9 @@
+.post-card{
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 25vh;
+    max-height: 25vh;
+    overflow: hidden;
+}

@@ -26,10 +26,14 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('britanica');
   });
 
-  it('should render title', () => {
+  it(`should have as span 'Welcom to post board'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('britanica app is running!');
+    const app = fixture.componentInstance;
+    const compiled = fixture.debugElement.nativeElement;
+
+    expect(compiled.querySelector('span').textContent)
+      .toContain('Welcom to post board')
+    
   });
+
 });

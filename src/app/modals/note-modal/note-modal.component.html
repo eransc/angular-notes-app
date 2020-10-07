@@ -1,0 +1,37 @@
+<p>Note Editor!</p>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  style="display: flex; flex-direction: column"
+>
+  <mat-form-field hintLabel="Max 50 characters">
+    <input
+      style="width: 350px"
+      matInput #input
+      maxlength="20"
+      [(ngModel)]="data.author"
+      [ngClass]="{ error: isValid('author') }"
+      formControlName="author"
+      placeholder="Author"
+    />
+    <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field style="margin-top:15px;">
+    <textarea hintLabel="Max 300 characters"
+      style="width: 350px"
+      matInput #txtArea
+      rows="5"
+      cols="40"
+      [maxLength]="300"
+      [(ngModel)]="data.content"
+      [ngClass]="{ error: isValid('content') }"
+      formControlName="content"
+      placeholder="Content"
+    ></textarea>
+    <mat-hint align="end">{{txtArea.value?.length || 0}}/300</mat-hint>
+  </mat-form-field>
+
+  <button mat-button (click)="onCancel()">Close</button>
+  <button mat-raised-button type="submit" color="primary">Save</button>
+</form>
