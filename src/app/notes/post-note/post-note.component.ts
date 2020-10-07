@@ -24,6 +24,7 @@ export class PostNoteComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result){
         this.notesService.addNote(result);
+        this.notesService.sortNotes();
       }
       
     });
